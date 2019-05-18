@@ -1,0 +1,5 @@
+com\paf\shippingapi\controller\ShippingController.class
+com\paf\shippingapi\ShippingApplication.class
+com\paf\shippingapi\model\Shipping.class
+com\paf\shippingapi\repository\ShippingRepository.class
+com\paf\shippingapi\dao\ShippingDAO.class
