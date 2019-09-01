@@ -1,19 +1,13 @@
 package com.paf.shippingapi.dao;
 
 import java.util.List;
-
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.paf.shippingapi.model.Shipping;
 import com.paf.shippingapi.repository.ShippingRepository;
 
 @Service
-@Repository
-@Transactional
 public class ShippingDAO {
 	
 	@Autowired
@@ -34,7 +28,7 @@ public class ShippingDAO {
 	
 //	get a shipping 
 	
-	public Shipping findOne(Long shpId) {
+	public Shipping findById(Long shpId) {
 		return shippingRepository.findOne(shpId);
 	}
 	

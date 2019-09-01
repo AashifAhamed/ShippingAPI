@@ -41,7 +41,7 @@ public class ShippingController {
 	@GetMapping("/shippings/{id}")
 	public ResponseEntity<Shipping> getEmployeeById(@PathVariable(value="id") Long shpid){
 		
-		Shipping shp=shippingDAO.findOne(shpid);
+		Shipping shp=shippingDAO.findById(shpid);
 		
 		if(shp==null) {
 			return ResponseEntity.notFound().build();
@@ -54,7 +54,7 @@ public class ShippingController {
 	@PutMapping("/shippings/{id}")
 	public ResponseEntity<Shipping> updateEmployee(@PathVariable(value="id") Long shpid,@Valid @RequestBody Shipping shpDetails){
 		
-		Shipping shp=shippingDAO.findOne(shpid);
+		Shipping shp=shippingDAO.findById(shpid);
 		if(shp==null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -74,7 +74,7 @@ public class ShippingController {
 	@DeleteMapping("/shippings/{id}")
 	public ResponseEntity<Shipping> deleteEmployee(@PathVariable(value="id") Long shpid){
 		
-		Shipping shp=shippingDAO.findOne(shpid);
+		Shipping shp=shippingDAO.findById(shpid);
 		if(shp==null) {
 			return ResponseEntity.notFound().build();
 		}

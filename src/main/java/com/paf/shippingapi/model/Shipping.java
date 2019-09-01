@@ -22,7 +22,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public class Shipping {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
 	@NotNull
@@ -40,37 +40,40 @@ public class Shipping {
 	private long buyerId;
 	
 	@NotBlank
+	@Column(name="Status")
 	private String Status;
 	
 	@NotBlank
+	@Column(name="type")
 	private String type;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 //	@LastModifiedDate
+	@Column(name="estDelivery")
 	private Date estDelivery;
 
 	
-	public long getShippingId() {
+	public Long getShippingId() {
 		return id;
 	}
 
-	public void setShippingId(long shippingId) {
+	public void setShippingId(Long shippingId) {
 		id = shippingId;
 	}
 
-	public long getSellerId() {
+	public Long getSellerId() {
 		return sellerId;
 	}
 
-	public void setSellerId(long sellerId) {
+	public void setSellerId(Long sellerId) {
 		this.sellerId = sellerId;
 	}
 
-	public long getBuyerId() {
+	public Long getBuyerId() {
 		return buyerId;
 	}
 
-	public void setBuyerId(long buyerId) {
+	public void setBuyerId(Long buyerId) {
 		this.buyerId = buyerId;
 	}
 
